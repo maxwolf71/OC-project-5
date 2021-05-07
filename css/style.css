@@ -1,0 +1,121 @@
+nav {
+  padding: 10px;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #8f5bfe;
+}
+
+.footer__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+}
+
+.footer__links a {
+  text-decoration: none;
+  font-size: 1.5em;
+  color: #f3e9f1;
+  margin-right: 15px;
+}
+
+.footer__details {
+  text-align: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.logoImage {
+  width: 100px;
+}
+
+@media screen and (min-width: 768px) {
+  .logoImage {
+    width: 150px;
+  }
+}
+
+.content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #e68b07;
+  padding: 50px;
+}
+
+.content #name {
+  color: #8f5bfe;
+}
+
+.content #price {
+  font-size: 1.8em;
+  font-weight: bolder;
+}
+
+.content button {
+  margin-bottom: 20px;
+  border-radius: 15px;
+  padding: 5px;
+  background-color: red;
+  color: #fff;
+  cursor: pointer;
+}
+
+.content button:hover {
+  background-color: green;
+}
+
+.content img {
+  width: 400px;
+  border: 4px solid red;
+  border-radius: 15px;
+}
+/*# sourceMappingURL=style.css.map */
