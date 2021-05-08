@@ -1,6 +1,7 @@
 @import 'navbar';
 @import 'colors';
 @import 'footer';
+@import 'keyframes';
 
 * {
     margin: 0;
@@ -15,7 +16,7 @@
         width: 150px;
     }
 }
-.content {
+.content, .product {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,20 +24,35 @@
     padding: 50px;
     #name {
         color: $main;
+        padding: 5px;
     }
     #price {
         font-size: 1.8em;
         font-weight: bolder;
+        margin: 5px;
+    }
+    #description {
+        text-align: center;
+        background-color: $white;
+        padding: 10px;
+        margin: 10px;
+    }
+    #colors {
+        font-size: 1.2em;
     }
     button {
         margin-bottom: 20px;
         border-radius: 15px;
-        padding: 5px;
+        padding: 15px;
         background-color: red;
         color: #fff;
         cursor: pointer;
+        a {
+            text-decoration: none;
+            color: $white;
+        }
         &:hover {
-            background-color: green;
+            animation: fadeButton 1s both;
         }
     }
     img {

@@ -1,3 +1,4 @@
+// index.html
 const content = document.querySelector('.content')
 
 function productList(products) {
@@ -16,10 +17,7 @@ async function retrieveProducts() {
 retrieveProducts()
 
 
-
-
-//**********************************************************
-
+//produit.html
 const product = document.querySelector('.product')
 
 const params = new URLSearchParams(window.location.search)
@@ -28,7 +26,12 @@ const result = params.get('_id')
 function teddyId(teddies) {
   for(let teddy of teddies) {
     if(result ===  teddy._id) {
-      product.innerHTML += `<h1>${teddy.name}</h1> <p>${teddy.price/100}€</p>${teddy.description}${teddy.imageUrl}`
+      const image = document.createElement('img')
+      document.querySelector('.product').appendChild(image)
+      image.src =  `${teddy.imageUrl}`
+
+      product.innerHTML += `<h1 id="name">${teddy.name}</h1><p id="description">${teddy.description}</p><p id="price">${teddy.price/100}€</p>
+      <p id="colors">Colors : ${teddy.colors}</p>`
     }
   }
 }

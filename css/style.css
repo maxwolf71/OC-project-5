@@ -58,6 +58,22 @@ nav ul li a {
   text-align: center;
 }
 
+@-webkit-keyframes fadeButton {
+  from {
+  }
+  to {
+    background-color: green;
+  }
+}
+
+@keyframes fadeButton {
+  from {
+  }
+  to {
+    background-color: green;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -76,7 +92,7 @@ nav ul li a {
   }
 }
 
-.content {
+.content, .product {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,29 +107,48 @@ nav ul li a {
   padding: 50px;
 }
 
-.content #name {
+.content #name, .product #name {
   color: #8f5bfe;
+  padding: 5px;
 }
 
-.content #price {
+.content #price, .product #price {
   font-size: 1.8em;
   font-weight: bolder;
+  margin: 5px;
 }
 
-.content button {
+.content #description, .product #description {
+  text-align: center;
+  background-color: #f3e9f1;
+  padding: 10px;
+  margin: 10px;
+}
+
+.content #colors, .product #colors {
+  font-size: 1.2em;
+}
+
+.content button, .product button {
   margin-bottom: 20px;
   border-radius: 15px;
-  padding: 5px;
+  padding: 15px;
   background-color: red;
   color: #fff;
   cursor: pointer;
 }
 
-.content button:hover {
-  background-color: green;
+.content button a, .product button a {
+  text-decoration: none;
+  color: #f3e9f1;
 }
 
-.content img {
+.content button:hover, .product button:hover {
+  -webkit-animation: fadeButton 1s both;
+          animation: fadeButton 1s both;
+}
+
+.content img, .product img {
   width: 400px;
   border: 4px solid red;
   border-radius: 15px;
