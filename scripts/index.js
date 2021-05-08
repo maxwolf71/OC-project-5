@@ -15,17 +15,34 @@ async function retrieveProducts() {
 
 retrieveProducts()
 
+
+
+
+//**********************************************************
+
 const product = document.querySelector('.product')
 
-function teddyDetails(products) {
-  
+const params = new URLSearchParams(window.location.search)
+const result = params.get('_id')
+
+function teddyId(teddies) {
+  for(let teddy of teddies) {
+    if(result ===  teddy._id) {
+      product.innerHTML += `<h1>${teddy.name}</h1> <p>${teddy.price/100}€</p>${teddy.description}${teddy.imageUrl}`
+    }
+  }
 }
 
-async function retrieveTeddy() {
+async function retrieveTeddies() {
   await fetch('http://localhost:3000/api/teddies')
-    .then((response) => response.json()) 
-    .then((products) => teddyDetails(products))
+  .then((response) => response.json())
+  .then((teddies) => teddyId(teddies))
 }
-retrieveTeddy()
+
+retrieveTeddies()
+
+
+
+
 
 
