@@ -2,10 +2,10 @@
 const content = document.querySelector('.content')
 
 function productList(products) {
-  products.forEach(item => {
-    content.innerHTML += `<h1 id="name">${item.name}</h1><p id="price">
-    ${item.price/100} €</p><button><a href="/pages/produit.html?_id=${item._id}">Voir le produit</a></button>`
-  }) 
+  for(let elem of products) {
+    content.innerHTML += `<h1 id="name">${elem.name}</h1><p id="price">
+    ${elem.price/100} €</p><button><a href="/pages/produit.html?_id=${elem._id}">Voir le produit</a></button>`
+  }
 }
 
 async function retrieveProducts() {
@@ -17,7 +17,8 @@ async function retrieveProducts() {
 retrieveProducts()
 
 
-//produit.html
+//produit.html**********************************
+
 const product = document.querySelector('.product')
 
 const params = new URLSearchParams(window.location.search)
@@ -31,7 +32,7 @@ function teddyId(teddies) {
       image.src =  `${teddy.imageUrl}`
 
       product.innerHTML += `<h1 id="name">${teddy.name}</h1><p id="description">${teddy.description}</p><p id="price">${teddy.price/100}€</p>
-      <p id="colors">Colors : ${teddy.colors}</p>`
+      <p id="colors">Couleurs : ${teddy.colors}</p>`
     }
   }
 }
@@ -44,8 +45,10 @@ async function retrieveTeddies() {
 
 retrieveTeddies()
 
+//panier.html**********************************
 
+const btnSelect = document.getElementById('btnSelect')
 
-
-
-
+btnSelect.onclick = function() { 
+  alert('Added to cart')
+ }

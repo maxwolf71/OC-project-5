@@ -24,24 +24,23 @@
     padding: 50px;
     #name {
         color: $main;
-        padding: 5px;
+        padding: 10px;
     }
     #price {
         font-size: 1.8em;
         font-weight: bolder;
-        margin: 5px;
+        padding: 5px
     }
     #description {
         text-align: center;
         background-color: $white;
         padding: 10px;
-        margin: 10px;
     }
     #colors {
         font-size: 1.2em;
     }
     button {
-        margin-bottom: 20px;
+        margin: 20px;
         border-radius: 15px;
         padding: 15px;
         background-color: red;
@@ -61,4 +60,8 @@
         border-radius: 15px;
     }
 }
-
+fieldset {
+    width: 500px;
+    height: 100px;
+    margin: 0 auto;
+}
