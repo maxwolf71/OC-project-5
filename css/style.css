@@ -92,7 +92,7 @@ nav ul li a {
   }
 }
 
-.content, .product {
+#content, #product {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -107,28 +107,28 @@ nav ul li a {
   padding: 50px;
 }
 
-.content #name, .product #name {
+#content #name, #product #name {
   color: #8f5bfe;
   padding: 10px;
 }
 
-.content #price, .product #price {
+#content #price, #product #price {
   font-size: 1.8em;
   font-weight: bolder;
   padding: 5px;
 }
 
-.content #description, .product #description {
+#content #description, #product #description {
   text-align: center;
   background-color: #f3e9f1;
   padding: 10px;
 }
 
-.content #colors, .product #colors {
+#content #colors, #product #colors {
   font-size: 1.2em;
 }
 
-.content button, .product button {
+#content button, #product button {
   margin: 20px;
   border-radius: 15px;
   padding: 15px;
@@ -137,17 +137,17 @@ nav ul li a {
   cursor: pointer;
 }
 
-.content button a, .product button a {
+#content button a, #product button a {
   text-decoration: none;
   color: #f3e9f1;
 }
 
-.content button:hover, .product button:hover {
+#content button:hover, #product button:hover {
   -webkit-animation: fadeButton 1s both;
           animation: fadeButton 1s both;
 }
 
-.content img, .product img {
+#content img, #product img {
   width: 400px;
   border: 4px solid red;
   border-radius: 15px;
@@ -156,6 +156,17 @@ nav ul li a {
 fieldset {
   width: 500px;
   height: 100px;
+  margin: 0 auto;
+}
+
+#lsOutput {
+  height: 50px;
+  width: 200px;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.6em;
   margin: 0 auto;
 }
 /*# sourceMappingURL=style.css.map */
