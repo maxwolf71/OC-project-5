@@ -1,19 +1,25 @@
 const content = document.getElementById('content')
 
-function productList(products) {
-  for(elem of products) {
-    content.innerHTML += `
-    <h1 id="name">${elem.name}</h1>
-    <p id="price">${elem.price/100} €</p>
-    <button><a href="/pages/produit.html?_id=${elem._id}">Voir le produit</a></button>
-    `
+function productList(teddies) {
+  for(teddy of teddies) {
+
+    const teddyName = document.createElement('h1')
+    const teddyPrice = document.createElement('h2')
+    const teddyBtn = document.createElement('button')
+
+    teddyName.textContent = `${teddy.name}`
+    teddyPrice.textContent = `${teddy.price/100} € `
+    teddyBtn.innerHTML = `<a href="/pages/produit.html?_id=${teddy._id}&name=${teddy.name}">
+    Voir le produit</a>`
+
+    content.append(teddyName, teddyPrice, teddyBtn)
   }
 }
 
-async function retrieveProducts() {
+async function retrieveteddies() {
   await fetch('https://oc-p5-api.herokuapp.com/api/teddies')
     .then((response) => response.json()) 
-    .then((products) => productList(products))
+    .then((teddies) => productList(teddies))
 }
 
-retrieveProducts()
+retrieveteddies()

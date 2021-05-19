@@ -107,24 +107,30 @@ nav ul li a {
   padding: 50px;
 }
 
-#content #name, #product #name {
+#content h1, #product h1 {
   color: #8f5bfe;
   padding: 10px;
 }
 
-#content #price, #product #price {
-  font-size: 1.8em;
+#content h2, #product h2 {
   font-weight: bolder;
-  padding: 5px;
-}
-
-#content #description, #product #description {
-  text-align: center;
   background-color: #f3e9f1;
   padding: 10px;
+  border-radius: 15px;
 }
 
-#content #colors, #product #colors {
+#content p, #product p {
+  background-color: #f3e9f1;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+#content .colorList, #product .colorList {
+  padding-bottom: 50px;
+}
+
+#content .colorList #selectColor, #product .colorList #selectColor {
+  color: #8f5bfe;
   font-size: 1.2em;
 }
 
@@ -151,22 +157,12 @@ nav ul li a {
   width: 400px;
   border: 4px solid red;
   border-radius: 15px;
+  margin: 20px;
 }
 
 fieldset {
   width: 500px;
   height: 100px;
-  margin: 0 auto;
-}
-
-#lsOutput {
-  height: 50px;
-  width: 200px;
-  background-color: white;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 1.6em;
   margin: 0 auto;
 }
 /*# sourceMappingURL=style.css.map */
