@@ -34,7 +34,7 @@ async function retrieveTeddy(teddyId) {
       colorList.appendChild(newListItem)
     }
     // Cart button   ************ 
-    const btnCart = document.createElement('btnCart')
+    const btnCart = document.createElement('btnCart') 
     btnCart.innerHTML ='<button id="btnCart">Ajouter au panier</button>'
     product.appendChild(btnCart)
     // Click Cart button   ************ 
@@ -43,8 +43,7 @@ async function retrieveTeddy(teddyId) {
       
       localStorage.setItem('name', `${teddyInfo.name}`)
       localStorage.setItem('color', `(${colorValue}) `)
-      localStorage.setItem('price', `${teddyInfo.price/100} € `)
-      console.log(localStorage)
+      localStorage.setItem('price', `${teddyInfo.price/100}`)
     }
   })
 }

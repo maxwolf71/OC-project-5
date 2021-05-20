@@ -17,7 +17,7 @@ function productList(teddies) {
 }
 
 async function retrieveteddies() {
-  await fetch('https://oc-p5-api.herokuapp.com/api/teddies')
+  await fetch('http://localhost:3000/api/teddies')
     .then((response) => response.json()) 
     .then((teddies) => productList(teddies))
 }
