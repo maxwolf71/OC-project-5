@@ -213,7 +213,7 @@ nav ul li a {
 
 #cart h1 {
   color: #8f5bfe;
-  padding: 10px;
+  margin: 0 auto;
 }
 
 #cart #qtyNumber {

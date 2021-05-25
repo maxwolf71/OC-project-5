@@ -9,8 +9,7 @@ function productList(teddies) {
 
     teddyName.textContent = `${teddy.name}`
     teddyPrice.textContent = `${teddy.price/100} € `
-    teddyBtn.innerHTML = `<a href="/pages/produit.html?_id=${teddy._id}&name=${teddy.name}">
-    Voir le produit</a>`
+    teddyBtn.innerHTML = `<a href="/pages/produit.html?_id=${teddy._id}&name=${teddy.name}">Voir le produit</a>`
 
     content.append(teddyName, teddyPrice, teddyBtn)
   }

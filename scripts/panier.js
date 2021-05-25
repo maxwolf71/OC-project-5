@@ -1,20 +1,23 @@
-const cart = document.getElementById('cart')
-
-// Create (html elements) + display cart items ************ 
-
+/*const cart = document.getElementById('cart')
+// Create (html elements) ************ 
 let cartItem = document.createElement('h1')
 let cartImage = document.createElement('img')
-console.log(cartImage)
+cartImage.src = localStorage.getItem('image')
 
+// Retrieve from products to localStorage ************
 let teddyName = localStorage.getItem('name')
 let teddyPrice = localStorage.getItem('price')
 let teddyColor = localStorage.getItem('color')
-let teddyImage = localStorage.getItem('image')
 
-cartItem.textContent = teddyName + ' ' 
-+ teddyColor + ' ' + teddyPrice + '€'
+if(!teddyName) {
+    cartItem.textContent = 'Panier vide'
+    return
+}
 
-cart.appendChild(cartItem)
+// Display cart items ************
+cartItem.textContent = teddyName + ' ' + teddyColor + ' ' + teddyPrice + '€'
+
+cart.append(cartImage, cartItem)
 
 // item/s quantity ********************
 let qtyItem = document.createElement('input')
@@ -23,27 +26,22 @@ qtyItem.setAttribute('id', 'qtyNumber')
 qtyItem.setAttribute('value', '1') 
 cart.appendChild(qtyItem)
 
-// buttton -> remove item from cart ********************
-let btnRemove = document.createElement('button')
-btnRemove.setAttribute('id', 'btnRemove')
-btnRemove.textContent = 'X'
-cart.appendChild(btnRemove)
+// Button -> empty cart ********************
+let emptyCart = document.createElement('button')
+emptyCart.setAttribute('id', 'emptyCart')
+emptyCart.textContent = 'Vider le panier'
+cart.appendChild(emptyCart)
 
-// remove item from cart ********************
-btnRemove.addEventListener('click', function() {
-    cart.remove()
-    localStorage.clear()
-    updateCartTotal()
-})
-function updateCartTotal() {
-     
-}
-
-if(teddyPrice === null) {
+// Click button -> empty cart ********************
+emptyCart.addEventListener('click', function() {
     cartItem.textContent = 'Panier vide'
+    cartImage.remove()
     qtyItem.remove()
-    btnRemove.remove()
-}
+    emptyCart.remove()
+    totalPrice.remove()
+    localStorage.clear()
+})
+
 // total price ********************
 
 let totalPrice = document.createElement('h2')
@@ -58,3 +56,21 @@ qtyItem.addEventListener('click', function() {
     let finalPrice = document.getElementById('qtyNumber').value * teddyPrice;
     totalPrice.textContent = `Total : ${finalPrice} €` 
 })
+*/
+
+function createCart() {
+    localStorage.setItem('panier', JSON.stringify([]))
+}
+function emptyCart() {
+    localStorage.clear()
+}
+function addTeddyCart() {
+    const teddy = {
+        id: 'Johnny',
+        color: 'Red'
+    }
+    let cart = localStorage.getItem('panier')
+    cart = JSON.parse(cart)
+    cart.push(teddy)
+    localStorage.setItem('panier', JSON.stringify(cart))
+}

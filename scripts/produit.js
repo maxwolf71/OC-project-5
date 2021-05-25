@@ -15,6 +15,7 @@ async function retrieveTeddy(teddyId) {
     const teddyName = document.createElement('h1')
     const teddyPrice = document.createElement('h2')
     const teddyDescription = document.createElement('p')
+
     const teddyImage = document.createElement('img')
     teddyImage.src = `${teddyInfo.imageUrl}`
   
@@ -33,25 +34,10 @@ async function retrieveTeddy(teddyId) {
       newListItem.textContent = `${color}`
   
       colorList.appendChild(newListItem)
-    }
-    
-    // Cart button   ************ 
-
-    const btnCart = document.createElement('button') 
-    btnCart.setAttribute('id', 'btnCart')
-    btnCart.textContent = 'Ajouter au panier'
-    product.appendChild(btnCart)
-
+    } 
     // Click Cart button   ************ 
-
-    btnCart.onclick = function() {
-      let colorValue = document.getElementById('selectColor').value
-      
-      localStorage.setItem('name', `${teddyInfo.name}`)
-      localStorage.setItem('color', `(${colorValue}) `)
-      localStorage.setItem('price', `${teddyInfo.price/100}`)
-      localStorage.setItem('image', `${teddyImage}`)
-      console.log(teddyImage)
+    function addTeddyCart() {
+      localStorage.setItem('id', teddyId)
     }
   })
 }
