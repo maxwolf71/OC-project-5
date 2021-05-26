@@ -11,6 +11,7 @@ async function retrieveTeddy(teddyId) {
   await fetch(`http://localhost:3000/api/teddies/${teddyId}`)
   .then((response) => response.json())
   .then((teddyInfo) => {
+
     // Create (html elements) + display product details ************ 
     const teddyName = document.createElement('h1')
     const teddyPrice = document.createElement('h2')
@@ -26,22 +27,33 @@ async function retrieveTeddy(teddyId) {
     product.append(teddyName, teddyPrice, teddyImage, teddyDescription)
 
     // Select Colors   ************ 
-    const colors = teddyInfo.colors 
-    for(color of colors) {
-      const colorList = document.getElementById('selectColor')
-  
-      let newListItem = document.createElement('option')
-      newListItem.textContent = `${color}`
-  
-      colorList.appendChild(newListItem)
-    } 
-    // Click Cart button   ************ 
-    function addTeddyCart() {
-      localStorage.setItem('id', teddyId)
+    function getGolors() {
+      const colors = teddyInfo.colors 
+      for(color of colors) {
+        const colorList = document.getElementById('selectColor')
+        
+        let newListItem = document.createElement('option')
+        newListItem.textContent = `${color}`
+    
+        colorList.appendChild(newListItem)
+      }
     }
+    getGolors() 
+
+    // Click Cart button   ************ 
+    function addToCart() {
+      btnAdd.addEventListener('click', function(){
+        let colorValue = document.getElementById('selectColor').value
+        
+        localStorage.setItem('name', `${teddyInfo.name}`)
+        localStorage.setItem('color', `${colorValue}`)
+  
+        alert(`${teddyInfo.name} (${colorValue}) ajouté au panier`)
+      })
+    }
+    addToCart()
   })
 }
-
 async function main() {
   const teddyId = await getTeddyId()
   retrieveTeddy(teddyId)

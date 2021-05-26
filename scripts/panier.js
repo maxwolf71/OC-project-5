@@ -66,8 +66,8 @@ function emptyCart() {
 }
 function addTeddyCart() {
     const teddy = {
-        id: 'Johnny',
-        color: 'Red'
+        id: localStorage.getItem('id'),
+        color: localStorage.getItem('color')
     }
     let cart = localStorage.getItem('panier')
     cart = JSON.parse(cart)
