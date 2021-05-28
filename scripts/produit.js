@@ -12,46 +12,35 @@ async function retrieveTeddy(teddyId) {
   .then((response) => response.json())
   .then((teddyInfo) => {
 
-    // Create (html elements) + display product details ************ 
-    const teddyName = document.createElement('h1')
-    const teddyPrice = document.createElement('h2')
-    const teddyDescription = document.createElement('p')
+    function displayTeddyInfo() {
+        const teddyName = document.createElement('h1')
+        const teddyPrice = document.createElement('h2')
+        const teddyDescription = document.createElement('p')
 
-    const teddyImage = document.createElement('img')
-    teddyImage.src = `${teddyInfo.imageUrl}`
-  
-    teddyName.textContent = `${teddyInfo.name}`
-    teddyPrice.textContent = `${teddyInfo.price/100} €`
-    teddyDescription.textContent = `${teddyInfo.description}`
-    
-    product.append(teddyName, teddyPrice, teddyImage, teddyDescription)
+        const teddyImage = document.createElement('img')
+        teddyImage.src = `${teddyInfo.imageUrl}`
+      
+        teddyName.textContent = `${teddyInfo.name}`
+        teddyPrice.textContent = `${teddyInfo.price/100} €`
+        teddyDescription.textContent = `${teddyInfo.description}`
+        
+        product.append(teddyName, teddyPrice, teddyImage, teddyDescription)
+    }
+    displayTeddyInfo()
 
-    // Select Colors   ************ 
-    function getGolors() {
+    // Get color list + selected color   ************ 
+    function getColors() {
       const colors = teddyInfo.colors 
       for(color of colors) {
-        const colorList = document.getElementById('selectColor')
+        const selectColor = document.getElementById('selectColor')
         
-        let newListItem = document.createElement('option')
-        newListItem.textContent = `${color}`
-    
-        colorList.appendChild(newListItem)
+        let option = document.createElement('option')
+        option.textContent = `${color}`
+        
+        selectColor.appendChild(option)
       }
     }
-    getGolors() 
-
-    // Click Cart button   ************ 
-    function addToCart() {
-      btnAdd.addEventListener('click', function(){
-        let colorValue = document.getElementById('selectColor').value
-        
-        localStorage.setItem('name', `${teddyInfo.name}`)
-        localStorage.setItem('color', `${colorValue}`)
-  
-        alert(`${teddyInfo.name} (${colorValue}) ajouté au panier`)
-      })
-    }
-    addToCart()
+    getColors() 
   })
 }
 async function main() {
@@ -59,3 +48,22 @@ async function main() {
   retrieveTeddy(teddyId)
 }
 main()
+
+// Click Cart button   ************ 
+function addTeddyCart() {
+  const teddy = {
+      name: localStorage.getItem('name'),
+      color: localStorage.getItem('color'),  
+      price: localStorage.getItem('price')  
+  }
+  let cart = localStorage.getItem('panier')
+  cart = JSON.parse(cart)
+  cart.push(teddy)
+  localStorage.setItem('panier', JSON.stringify(cart))
+  console.log(cart)
+}
+
+function selectedColor() {
+      let theColor  = document.getElementById('selectColor').value;
+      console.log(theColor)
+    }

@@ -58,19 +58,27 @@ qtyItem.addEventListener('click', function() {
 })
 */
 
-function createCart() {
+cartDisplay()
+
+function setEmptyCart() {
+    localStorage.clear()
     localStorage.setItem('panier', JSON.stringify([]))
 }
-function emptyCart() {
-    localStorage.clear()
-}
-function addTeddyCart() {
-    const teddy = {
-        id: localStorage.getItem('id'),
-        color: localStorage.getItem('color')
+
+function cartDisplay() {
+    const cart = localStorage.getItem('panier')
+    if(cart === '[]') {
+        document.getElementById('cartDiv').innerHTML += '<h1>Panier vide</h1>'
     }
-    let cart = localStorage.getItem('panier')
-    cart = JSON.parse(cart)
-    cart.push(teddy)
-    localStorage.setItem('panier', JSON.stringify(cart))
+    else {
+        let cartItems = JSON.parse(localStorage.getItem('panier')) 
+        for(cartItem of cartItems) {
+        document.getElementById('cartDiv').innerHTML += `
+            <h1>${cartItem.name}<br></h1>
+            <h2>${cartItem.price}€ </h2><br/>
+            <h3>(${theColor})</h3>
+        `
+        }
+    }
 }
+

@@ -200,7 +200,7 @@ nav ul li a {
   margin: 20px;
 }
 
-#cart {
+#cartDiv {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -211,23 +211,22 @@ nav ul li a {
   padding: 50px;
 }
 
-#cart h1 {
+#cartDiv h1 {
   color: #8f5bfe;
-  margin: 0 auto;
 }
 
-#cart #qtyNumber {
+#cartDiv #qtyNumber {
   width: 50px;
 }
 
-#cart img {
+#cartDiv img {
   width: 100px;
   border: 4px solid red;
   border-radius: 15px;
   margin: 20px;
 }
 
-#cart #totalPrice {
+#cartDiv #totalPrice {
   font-weight: bolder;
   background-color: #f3e9f1;
   padding: 10px;

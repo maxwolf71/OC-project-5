@@ -1,11 +1,10 @@
-#cart {
+#cartDiv {
     display: flex;
     align-items: center;
     background: $second;
     padding: 50px;
     h1 {
         color: $main;
-        margin: 0 auto;
     }
     #qtyNumber {
         width: 50px;
