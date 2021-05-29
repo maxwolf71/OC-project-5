@@ -62,21 +62,22 @@ cartDisplay()
 
 function setEmptyCart() {
     localStorage.clear()
-    localStorage.setItem('panier', JSON.stringify([]))
+    localStorage.setItem('localCart', JSON.stringify([]))
+    document.location.reload()
 }
 
 function cartDisplay() {
-    const cart = localStorage.getItem('panier')
-    if(cart === '[]') {
+    const cart = localStorage.getItem('localCart')
+    if (cart === '[]') {
         document.getElementById('cartDiv').innerHTML += '<h1>Panier vide</h1>'
     }
     else {
-        let cartItems = JSON.parse(localStorage.getItem('panier')) 
-        for(cartItem of cartItems) {
-        document.getElementById('cartDiv').innerHTML += `
-            <h1>${cartItem.name}<br></h1>
-            <h2>${cartItem.price}€ </h2><br/>
-            <h3>(${theColor})</h3>
+        let cartItems = JSON.parse(localStorage.getItem('localCart'))
+        for (cartItem of cartItems) {
+            document.getElementById('cartDiv').innerHTML += `
+            <h1>${cartItem.name}</h1>
+            <h2>${cartItem.price} €--</h2>
+            <h3>(${cartItem.color})</h3>  
         `
         }
     }

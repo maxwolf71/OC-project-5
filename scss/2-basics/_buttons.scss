@@ -1,15 +1,15 @@
 button {
-    margin: 20px;
-    border-radius: 15px;
-    padding: 10px;
-    background-color: red;
-    color: #fff;
-    cursor: pointer;
-    a {
-        text-decoration: none;
-        color: $white;
-    }
-    &:hover {
-        animation: fadeButton 1s both;
-    }
+  margin: 20px;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: red;
+  color: #fff;
+  cursor: pointer;
+  a {
+    text-decoration: none;
+    color: $white;
+  }
+  &:hover {
+    animation: fadeButton 1s both;
+  }
 }
