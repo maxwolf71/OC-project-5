@@ -217,17 +217,28 @@ nav ul li a {
 
 #cartDiv h1 {
   color: #8f5bfe;
+  padding: 10px;
 }
 
-#cartDiv #qtyNumber {
-  width: 50px;
-}
-
-#cartDiv img {
-  width: 100px;
-  border: 4px solid red;
+#cartDiv h2 {
+  font-weight: bolder;
+  background-color: #f3e9f1;
+  padding: 5px;
   border-radius: 15px;
+  margin-top: 10px;
+}
+
+#cartDiv h3 {
+  margin-top: 10px;
+}
+
+#cartDiv #qtyInput {
+  width: 50px;
+  padding: 2px;
   margin: 20px;
+  background-color: #8f5bfe;
+  color: #f3e9f1;
+  font-size: 1.2em;
 }
 
 #cartDiv #totalPrice {

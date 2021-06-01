@@ -43,12 +43,12 @@ async function retrieveTeddy(teddyId) {
       getColors()
 
       // Click Cart button   ************ 
-      document.getElementById("btnAddToCart").onclick = function() {addTeddyCart(), pop()}
+      document.getElementById("btnAddToCart").onclick = function () {popup() }
 
       function addTeddyCart() {
         const teddy = {
           name: `${teddyInfo.name}`,
-          price: ` ${teddyInfo.price /100}`,
+          price: ` ${teddyInfo.price / 100}`,
           color: `${document.getElementById('selectColor').value}`
         }
         let cart = localStorage.getItem('localCart')
@@ -56,12 +56,12 @@ async function retrieveTeddy(teddyId) {
         cart.push(teddy)
         localStorage.setItem('localCart', JSON.stringify(cart))
       }
-      function pop() {
-        if(confirm("Confirmer la mise au panier")) {
-         location.href = 'panier.html'
+      function popup() {
+        if (confirm(`Ajouter ${teddyInfo.name} (${document.getElementById('selectColor').value}) au panier ?`)) {
+          location.href = 'panier.html'
+          addTeddyCart()
         }
       }
-
     })
 }
 async function main() {
@@ -70,8 +70,3 @@ async function main() {
 }
 main()
 
-function popup() {
-    if (window.confirm("Do you really want to leave?")) {
-    window.open("panier.html", "Thanks for Visiting!");
-    }
-}
