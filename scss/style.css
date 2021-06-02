@@ -2,7 +2,9 @@
   from {
   }
   to {
-    background-color: green;
+    background-color: #e68b07;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
 }
 
@@ -10,7 +12,9 @@
   from {
   }
   to {
-    background-color: green;
+    background-color: #e68b07;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
   }
 }
 
@@ -36,8 +40,8 @@ button {
   margin: 20px;
   border-radius: 15px;
   padding: 10px;
-  background-color: red;
-  color: #fff;
+  background-color: #8f5bfe;
+  color: #f3e9f1;
   cursor: pointer;
 }
 
@@ -47,8 +51,8 @@ button a {
 }
 
 button:hover {
-  -webkit-animation: fadeButton 1s both;
-          animation: fadeButton 1s both;
+  -webkit-animation: fadeButton 0.8s both;
+          animation: fadeButton 0.8s both;
 }
 
 .footer {
@@ -88,6 +92,7 @@ button:hover {
 
 nav {
   padding: 10px;
+  background-color: #8f5bfe;
 }
 
 nav ul {
@@ -107,6 +112,7 @@ nav ul li {
 }
 
 nav ul li a {
+  color: #f3e9f1;
   text-decoration: none;
   font-size: 1.2rem;
 }
@@ -204,10 +210,9 @@ nav ul li a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -215,36 +220,74 @@ nav ul li a {
   padding: 50px;
 }
 
-#cartDiv h1 {
-  color: #8f5bfe;
+#cartDiv #empty {
+  color: #f3e9f1;
+  margin: 0 auto;
+}
+
+#cartDiv #cartItem {
+  padding: 10px;
+  text-align: center;
+}
+
+#cartDiv #cartItem #container {
+  border: 4px solid red;
+  background-color: #8f5bfe;
+  border-radius: 15px;
+  margin-bottom: 20px;
   padding: 10px;
 }
 
-#cartDiv h2 {
-  font-weight: bolder;
-  background-color: #f3e9f1;
-  padding: 5px;
-  border-radius: 15px;
-  margin-top: 10px;
-}
-
-#cartDiv h3 {
-  margin-top: 10px;
-}
-
-#cartDiv #qtyInput {
-  width: 50px;
-  padding: 2px;
-  margin: 20px;
-  background-color: #8f5bfe;
+#cartDiv #cartItem h1 {
   color: #f3e9f1;
+  font-size: 2em;
+}
+
+#cartDiv #cartItem #price {
+  width: 50%;
+  margin: 0 auto;
+  background-color: #e68b07;
+  color: #8f5bfe;
+  border-radius: 15px;
+  padding: 5px 0;
+}
+
+#cartDiv #cartItem h3 {
+  padding: 10px;
+  color: #f3e9f1;
+}
+
+#cartDiv #moveButton {
   font-size: 1.2em;
 }
 
 #cartDiv #totalPrice {
-  font-weight: bolder;
-  background-color: #f3e9f1;
+  background-color: #8f5bfe;
+  border: 2px solid #f3e9f1;
+  color: #f3e9f1;
   padding: 10px;
   border-radius: 15px;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #e68b07;
+  border: 4px solid #f3e9f1;
+}
+
+form h1 {
+  font-size: 1.4em;
+  margin: 15px;
+  padding: 10px;
+  border: 2px solid #f3e9f1;
 }
 /*# sourceMappingURL=style.css.map */

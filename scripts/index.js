@@ -8,7 +8,7 @@ function productList(teddies) {
     const teddyBtn = document.createElement('button')
 
     teddyName.textContent = `${teddy.name}`
-    teddyPrice.textContent = `${teddy.price / 100} € `
+    teddyPrice.textContent = `${teddy.price/100} €`
     teddyBtn.innerHTML = `<a href="/pages/produit.html?_id=${teddy._id}">Voir le produit</a>`
 
     content.append(teddyName, teddyPrice, teddyBtn)

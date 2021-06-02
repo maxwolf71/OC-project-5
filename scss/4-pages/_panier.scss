@@ -1,35 +1,65 @@
 #cartDiv {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   background: $second;
   padding: 50px;
-  h1 {
-    color: $main;
-    padding: 10px;
-  }
-  h2 {
-    font-weight: bolder;
-    background-color: $white;
-    padding: 5px;
-    border-radius: 15px;
-    margin-top: 10px;
-  }
-  h3 {
-    margin-top: 10px;
-  }
-  #qtyInput {
-    width: 50px;
-    padding: 2px;
-    margin: 20px;
-    background-color: $main;
+
+  #empty {
     color: $white;
+    margin: 0 auto;
+  }
+
+  #cartItem {
+    padding: 10px;
+    text-align: center;
+
+    #container {
+      border: 4px solid red;
+      background-color: $main;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      padding: 10px;
+    }
+    h1 {
+      color: $white;
+      font-size: 2em;
+    }
+    #price {
+      width: 50%;
+      margin: 0 auto;
+      background-color: $second;
+      color: $main;
+      border-radius: 15px;
+      padding: 5px 0;
+    }
+    h3 {
+      padding: 10px;
+      color: $white;
+    }
+  }
+  #moveButton {
     font-size: 1.2em;
   }
   #totalPrice {
-    font-weight: bolder;
-    background-color: $white;
+    background-color: $main;
+    border: 2px solid $white;
+    color: $white;
     padding: 10px;
     border-radius: 15px;
+  }
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $second;
+  border: 4px solid $white;
+  
+  h1 {
+    font-size: 1.4em;
+    margin: 15px;
+    padding: 10px;
+    border: 2px solid $white;
   }
 }
