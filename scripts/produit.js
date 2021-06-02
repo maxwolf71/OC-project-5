@@ -21,7 +21,7 @@ async function retrieveTeddy(teddyId) {
         teddyImage.src = `${teddyInfo.imageUrl}`
 
         teddyName.textContent = `${teddyInfo.name}`
-        teddyPrice.textContent = `${teddyInfo.price / 100} €`
+        teddyPrice.textContent = `${teddyInfo.price/100} €`
         teddyDescription.textContent = `${teddyInfo.description}`
 
         product.append(teddyName, teddyPrice, teddyImage, teddyDescription)
@@ -48,7 +48,7 @@ async function retrieveTeddy(teddyId) {
       function addTeddyCart() {
         const teddy = {
           name: `${teddyInfo.name}`,
-          price: ` ${teddyInfo.price / 100}`,
+          price: `${teddyInfo.price}`,
           color: `${document.getElementById('selectColor').value}`
         }
         let cart = localStorage.getItem('localCart')

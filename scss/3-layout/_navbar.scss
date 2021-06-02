@@ -1,5 +1,6 @@
 nav {
   padding: 10px;
+  background-color: $main;
   ul {
     display: flex;
     justify-content: space-evenly;
@@ -8,6 +9,7 @@ nav {
     li {
       list-style: none;
       a {
+        color: $white;
         text-decoration: none;
         font-size: 1.2rem;
       }

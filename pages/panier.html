@@ -27,8 +27,19 @@
     </nav>
 
     <div id="cartDiv">
-      <button onclick="setEmptyCart()">Vider Panier</button>
+      <div id="cartItem"></div>
+      <button id="moveButton" onclick="setEmptyCart()">Vider Panier</button>
     </div>
+    
+    <form name="orderForm" onsubmit="return false">
+      <h1>Formulaire de commande</h1>
+      <input type="text" placeholder="Prénom" id="firstName">
+      <input type="text" placeholder="Nom" id="lastName">
+      <input type="text" placeholder="Adresse" id="address">
+      <input type="text" placeholder="Code postale" id="zipCode">
+      <input type="email" placeholder=Email" id="email">
+      <button onclick="submitOrder()">Confirmer commande</button>
+    </form>
 
     <footer class="footer">
       <p class="footer__links">

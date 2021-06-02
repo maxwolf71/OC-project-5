@@ -2,14 +2,14 @@ button {
   margin: 20px;
   border-radius: 15px;
   padding: 10px;
-  background-color: red;
-  color: #fff;
+  background-color: $main;
+  color: $white;
   cursor: pointer;
   a {
     text-decoration: none;
     color: $white;
   }
   &:hover {
-    animation: fadeButton 1s both;
+    animation: fadeButton 0.8s both;
   }
 }
