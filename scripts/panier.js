@@ -8,7 +8,7 @@ function setEmptyCart() {
 
 function totalCart() {
     const prices = JSON.parse(localStorage.getItem('localCart'))
-    
+
     let total = 0
     for (price of prices) {
         total = total + price.price / 100
@@ -28,9 +28,9 @@ function cartDisplay() {
         for (cartItem of cartItems) {
             document.getElementById('cartItem').innerHTML += `
             <div id="container">
-            <h1>${cartItem.name}</h1>
-            <h3>(${cartItem.color})</h3>
-            <h2 id="price">${cartItem.price / 100} €</h2>
+            <h1 id="name">${cartItem.name}</h1>
+            <h2 id="color">(${cartItem.color})</h2>
+            <h3 id="price">${cartItem.price / 100} €</h3>
             </div>
         `
         }
@@ -94,7 +94,7 @@ function isEmail(email) {
 }
 
 class User {
-    constructor(firstName, lastName, address, email) {
+    constructor(firstName, lastName, address, email, zipCode) {
         this.lastName = lastName
         this.firstName = firstName
         this.address = address
@@ -107,8 +107,8 @@ function submitOrder() {
     if (isValid()) {
         let usr = new User(firstName.value, lastName.value, email.value, address.value, zipCode.value)
 
-        alert(`${usr.firstName} Merci pour votre commande`)
+        alert(`${usr.firstName} merci pour votre commande !`)
     } else {
         alert("Merci de renseigner tous les champs")
-    }
+    } 
 }

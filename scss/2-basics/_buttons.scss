@@ -5,11 +5,12 @@ button {
   background-color: $main;
   color: $white;
   cursor: pointer;
+  border: 2px solid red;
   a {
     text-decoration: none;
     color: $white;
   }
   &:hover {
-    animation: fadeButton 0.8s both;
+    animation: fadeButton 0.5s both;
   }
 }
