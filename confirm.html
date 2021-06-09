@@ -26,29 +26,13 @@
       </ul>
     </nav>
 
-    <div id="cartDiv">
-      <div id="cartItem"></div>
-      <button id="resetButton" onclick="resetEmptyCart()">Vider Panier</button>
-    </div>
+    <div id="recapDisplay"></div>
 
-    <form action="confirm.html" id="orderForm" onsubmit=" return validate()">
-      <h1>Créer un compte client</h1>
-
-      <div id="display"></div>
-
-      <input type="text" placeholder="Prénom" id="firstName"/>
-      <input type="text" placeholder="Nom" id="lastName"/>
-      <input type="text" placeholder="Adresse" id="address"/>
-      <input type="text" placeholder="Ville" id="city"/>
-      <input type="email" placeholder="Email" id="email"/>
-      <button type="submit">Passer commande</button>
-    </form>
-    
     <footer class="footer">
       <p class="footer__links">
         <img src="img/logo.jpg" class="logoImage" alt="Orinoco logo" />
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="index.html">About</a>
+        <a href="index.html">Contact</a>
       </p>
 
       <div class="footer__details">
@@ -60,6 +44,6 @@
         <p><a href="mailto:support@company.com">support@company.com</a></p>
       </div>
     </footer>
-    <script src="scripts/panier.js"></script>
+    <script src="scripts/confirm.js"></script>
   </body>
 </html>

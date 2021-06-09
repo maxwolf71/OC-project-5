@@ -13,15 +13,17 @@ async function retrieveTeddy(teddyId) {
     .then((teddyInfo) => {
 
       function displayTeddyInfo() {
-        const teddyName = document.createElement('h1')
-        const teddyPrice = document.createElement('h2')
+        const teddyName = document.createElement('h2')
+        teddyName.setAttribute('id', 'name')
+        const teddyPrice = document.createElement('h3')
+        teddyPrice.setAttribute('id', 'price')
         const teddyDescription = document.createElement('p')
 
         const teddyImage = document.createElement('img')
         teddyImage.src = `${teddyInfo.imageUrl}`
 
         teddyName.textContent = `${teddyInfo.name}`
-        teddyPrice.textContent = `${teddyInfo.price/100} €`
+        teddyPrice.textContent = `${teddyInfo.price / 100} €`
         teddyDescription.textContent = `${teddyInfo.description}`
 
         product.append(teddyName, teddyPrice, teddyImage, teddyDescription)
@@ -43,10 +45,11 @@ async function retrieveTeddy(teddyId) {
       getColors()
 
       // Click Cart button   ************ 
-      document.getElementById("btnAddToCart").onclick = function () {popup() }
+      document.getElementById("btnAddToCart").onclick = function () { popup() }
 
       function addTeddyCart() {
         const teddy = {
+          id: `${teddyId}`,
           name: `${teddyInfo.name}`,
           price: `${teddyInfo.price}`,
           color: `${document.getElementById('selectColor').value}`

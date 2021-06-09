@@ -181,12 +181,13 @@ nav ul li a {
   padding: 50px;
 }
 
-#product h1 {
+#product #name {
+  font-size: 2.5em;
   color: #8f5bfe;
   padding: 10px;
 }
 
-#product h2 {
+#product #price {
   font-weight: bolder;
   background-color: #f3e9f1;
   padding: 10px;
@@ -271,10 +272,6 @@ nav ul li a {
   padding: 5px;
 }
 
-#cartDiv #moveButton {
-  font-size: 1.2em;
-}
-
 #cartDiv #totalPrice {
   background-color: #8f5bfe;
   border: 2px solid red;
@@ -282,7 +279,7 @@ nav ul li a {
   padding: 10px;
 }
 
-form {
+#orderForm {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -297,12 +294,26 @@ form {
   border: 4px solid #8f5bfe;
 }
 
-form h1 {
+#orderForm h1 {
   background-color: #8f5bfe;
   font-size: 1.4em;
   margin: 15px;
   padding: 10px;
   border: 2px solid red;
   color: #f3e9f1;
+}
+
+#orderForm input {
+  margin-bottom: 10px;
+}
+
+#containerRecapOrder {
+  width: 80vh;
+  border: 2px solid blue;
+  text-align: center;
+}
+
+.bold {
+  font-weight: bold;
 }
 /*# sourceMappingURL=style.css.map */
