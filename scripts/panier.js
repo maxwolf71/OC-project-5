@@ -11,7 +11,7 @@ function totalCart() {
 
     let total = 0
     for (price of prices) {
-        total = total + price.price / 100
+        total += price.price / 100
     }
     cartDiv.innerHTML += `<h2 id="totalPrice">Total : ${total} €</h2>`
     localStorage.setItem('total', JSON.stringify(total))
