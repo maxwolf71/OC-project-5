@@ -308,12 +308,16 @@ nav ul li a {
 }
 
 #containerRecapOrder {
-  width: 80vh;
-  border: 2px solid blue;
+  padding: 40px;
   text-align: center;
+  color: #8f5bfe;
+  line-height: 2;
+  font-size: 1.2em;
 }
 
-.bold {
+#containerRecapOrder .bold {
   font-weight: bold;
+  font-size: large;
+  color: red;
 }
 /*# sourceMappingURL=style.css.map */

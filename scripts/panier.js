@@ -53,9 +53,9 @@ function validate() {
     const city = document.getElementById('city')
     const email = document.getElementById('email')
 
-    if(firstName.value.length < 3 || lastName.value.length < 3 || address.value.length < 6 || city.value.length < 3) {
+    if (firstName.value.length < 3 || lastName.value.length < 3 || address.value.length < 6 || city.value.length < 3) {
         alert('Formulaire non complété')
-        firstName.style.border= "4px solid red"
+        firstName.style.border = "4px solid red"
 
         return false
     }
@@ -65,8 +65,7 @@ function validate() {
     }
 }
 
-/*function submitOrder() {
-    if (isValid()) {
+function postRequest() {
 
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
@@ -92,11 +91,13 @@ function validate() {
         };
 
         fetch("http://localhost:3000/api/teddies/order", requestOptions)
-            .then(response => response.text())
-            .then(result => console.log(result))
-            .catch(error => console.log('error', error));
-    } else {
-        alert("form not filled")
-    }
+        .then(response => response.text())
+        .then(result => 
+            // add orderId to localStorage
+            localStorage.setItem('orderId', `${JSON.parse(result).orderId}`),
+            localStorage.setItem('lastName', `${lastName.value}`),
+            localStorage.setItem('firstName', `${firstName.value}`)
+        )
+        .catch(error => console.log('error', error))
 }
-*/
+postRequest()

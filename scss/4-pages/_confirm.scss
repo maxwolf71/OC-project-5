@@ -1,8 +1,12 @@
 #containerRecapOrder {
-    width: 80vh;
-    border: 2px solid blue;
+    padding: 40px;
     text-align: center;
-}
-.bold {
-    font-weight: bold;
+    color: $main;
+    line-height: 2;
+    font-size: 1.2em;
+    .bold {
+        font-weight: bold;
+        font-size: large ;
+        color: $red;
+    }
 }
