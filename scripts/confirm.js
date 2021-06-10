@@ -10,7 +10,7 @@ function displayOrderInfo() {
             <h2>Récaplitulatif de votre commande</h2>
             <div class="recapOrder">
                 <p>Merci <span class="bold">${lastName}</span> <span class="bold">${firstName}</span> pour votre commande</p>
-                <p>Le montant total de votre commande est : <span class="bold">${total}</span> €</p>
+                <p>Le montant total de votre commande est de : <span class="bold">${total}</span> €</p>
                 <p>Votre numéro de commande est : <span class="bold">${orderId}</span></p>
             </div>
         </div>
@@ -18,3 +18,5 @@ function displayOrderInfo() {
     document.getElementById('recapDisplay').innerHTML = displayrecap
 }
 displayOrderInfo()
+localStorage.clear()
+localStorage.setItem('localCart', JSON.stringify([]))
