@@ -1,4 +1,4 @@
-const product = document.getElementById('product')
+const productCard = document.getElementById('product')
 
 function getTeddyId() {
   const pageLink = window.location.search
@@ -26,7 +26,7 @@ async function retrieveTeddy(teddyId) {
         teddyPrice.textContent = `${teddyInfo.price / 100} €`
         teddyDescription.textContent = `${teddyInfo.description}`
 
-        product.append(teddyName, teddyPrice, teddyImage, teddyDescription)
+        productCard.append(teddyName, teddyPrice, teddyImage, teddyDescription)
       }
       displayTeddyInfo()
 
@@ -59,6 +59,7 @@ async function retrieveTeddy(teddyId) {
         cart.push(teddy)
         localStorage.setItem('localCart', JSON.stringify(cart))
       }
+
       function popup() {
         if (confirm(`Ajouter ${teddyInfo.name} (${document.getElementById('selectColor').value}) au panier ?`)) {
           location.href = 'panier.html'
@@ -67,6 +68,7 @@ async function retrieveTeddy(teddyId) {
       }
     })
 }
+
 async function main() {
   const teddyId = await getTeddyId()
   retrieveTeddy(teddyId)

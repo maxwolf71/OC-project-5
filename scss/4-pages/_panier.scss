@@ -1,24 +1,29 @@
 #cartDiv {
   display: flex;
   align-items: center;
+  justify-content: space-around;
   background: $second;
-  padding: 50px;
+  padding: 20px;
+ 
   #empty {
-    color: $main;
-    margin: 0 auto;
+    color: $white;
+    font-size: 2.5em;
   }
   #cartItem {
     padding: 10px;
     text-align: center;
 
-    #container {
+    #item {
       display: flex;
       align-items: center;
       border: 4px solid red;
-      background-color: $main;
+      background: $main;
       border-radius: 15px;
       margin-bottom: 20px;
       padding: 5px;
+      @include desktop {
+        width: 400px;
+      }
     }
     #name {
       color: $white;
@@ -26,41 +31,64 @@
       margin-right: 5px;
     }
     #color {
-      color: $second;
+      color: $white;
       font-size: 1.2em;
-      margin-right: 10px;
+      margin: 0 15px 0 5px;
     }
     #price {
       width: 70px;
       margin-left: auto;
-      background-color: $second;
+      background: $second;
       color: $white;
       border-radius: 15px;
       padding: 5px;
     }
   }
   #totalPrice {
-    background-color: $main;
-    border: 2px solid $red;
+    background: $main;
+    border: 4px solid $red;
     color: $white;
-    padding: 10px;
+    padding: 20px;
+    @include desktop {
+      padding: 50px;
+    }
   }
+}
+
+#emptyCartContainer {
+  background: $second;
+  text-align: center;
 }
 #orderForm {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: $second;
+  background: $third;
   border: 4px solid $main;
+  color: $main;
   h1 {
     background-color: $main;
     font-size: 1.4em;
     margin: 15px;
     padding: 10px;
-    border: 2px solid $red;
+    border-bottom: 4px solid $red;
     color: $white;
   }
   input {
-    margin-bottom: 10px;
+    margin: 10px;
+    padding: 5px;
+    font-size: 1.2em;
   }
+  
+  .invalid {
+    border: 4px solid red;
+  }
+  span {
+    color: $white;
+    font-weight: bold;
+  }
+}
+
+.hidden {
+  display: none;
 }
