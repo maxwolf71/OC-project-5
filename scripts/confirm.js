@@ -5,17 +5,20 @@ function displayOrderInfo() {
     const firstName = localStorage.getItem('firstName')
     const orderId = localStorage.getItem('orderId')
 
-    const displayrecap = `
-        <div id="containerRecapOrder">
-            <h2>Récaplitulatif de votre commande</h2>
-            <div class="recapOrder">
-                <p>Merci <span class="bold">${lastName}</span> <span class="bold">${firstName}</span> pour votre commande</p>
-                <p>Le montant total de votre commande est de : <span class="bold">${total}</span> €</p>
-                <p>Votre numéro de commande est : <span class="bold">${orderId}</span></p>
-            </div>
-        </div>
-    `
-    document.getElementById('recapDisplay').innerHTML = displayrecap
+    if (orderId != null) {
+
+        document.getElementById('recapDisplay').innerHTML = `
+            
+                <h2>Récapitulatif de votre commande</h2>
+                <div id="recapOrder">
+                    <p>Merci <span class="bold">${firstName}</span> <span class="bold">${lastName}</span> pour votre commande</p>
+                    <p>Le montant total de votre commande est de : <span class="bold">${total}€</span></p>
+                    <p>Votre numéro de commande est : <span class="bold">${orderId}</span></p>
+                </div>
+        `
+    } else {
+        document.getElementById('recapDisplay').innerHTML = "Merci d'avoir choisi nos produits"
+    }
 }
 displayOrderInfo()
 localStorage.clear()

@@ -3,18 +3,25 @@
   flex-direction: column;
   align-items: center;
   background: $second;
-  padding: 50px;
+  padding: 20px;
 
   #listDiv {
     display: flex;
     align-items: center;
-    background-color: $main;
-    width: 450px;
+    background: $main;
     border: 4px solid $red;
     padding: 10px;
     margin: 10px;
     border-radius: 15px;
+    width: 500px;
 
+    @include tablette {
+      width: 80%;
+    }
+
+    @include desktop {
+      width: 500px;
+    }
     #name {
       color: $white;
       font-size: 1.9em;
@@ -23,14 +30,10 @@
 
     #price {
       width: 70px;
-      background-color: $second;
-      color: $white;
+      background-color: $white;
+      color: $second;
       border-radius: 15px;
       padding: 15px;
     }
-    button {
-      background-color: $second;
-    }
   }
-  
 }
