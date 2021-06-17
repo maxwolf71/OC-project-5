@@ -54,19 +54,23 @@ async function retrieveTeddy(teddyId) {
           price: `${teddyInfo.price}`,
           color: `${document.getElementById('selectColor').value}`
         }
+        // define cart as localCart in localStorage
         let cart = localStorage.getItem('localCart')
+        // make it more readable
         cart = JSON.parse(cart)
+        //add another item
         cart.push(teddy)
         localStorage.setItem('localCart', JSON.stringify(cart))
       }
 
       function popup() {
         if (confirm(`Ajouter ${teddyInfo.name} (${document.getElementById('selectColor').value}) au panier ?`)) {
-          location.href = 'panier.html'
+          location.href = 'cart.html'
           addTeddyCart()
         }
       }
     })
+    .catch(error => console.log('error', error))
 }
 
 async function main() {

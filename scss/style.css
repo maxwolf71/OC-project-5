@@ -140,6 +140,9 @@ nav ul li a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -147,35 +150,45 @@ nav ul li a {
   background: linear-gradient(to left, #8f5bfe 0%, #e68b08 100%);
   border: 4px solid #FBBBB9;
   padding: 10px;
-  margin: 10px;
   border-radius: 15px;
-  width: 500px;
+  width: 60%;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   #content #listDiv {
-    width: 80%;
+    width: 50%;
   }
 }
 
 @media (min-width: 1024px) {
   #content #listDiv {
-    width: 500px;
+    width: 30%;
   }
 }
 
 #content #listDiv #name {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   color: #F0FFFF;
-  font-size: 1.9em;
-  margin-right: auto;
+  font-size: 1.4em;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  #content #listDiv #name {
+    font-size: 1.9em;
+  }
 }
 
 #content #listDiv #price {
-  width: 70px;
   background-color: #F0FFFF;
   color: linear-gradient(to right, #8f5bfe 0%, #e68b08 100%);
   border-radius: 15px;
-  padding: 15px;
+  padding: 10px;
+}
+
+#content button {
+  margin-top: 5px;
 }
 
 #product {
@@ -245,7 +258,7 @@ nav ul li a {
   margin: 20px;
 }
 
-#cartDiv {
+#cartMainContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -259,17 +272,17 @@ nav ul li a {
   padding: 20px;
 }
 
-#cartDiv #empty {
+#cartMainContainer #empty {
   color: #F0FFFF;
   font-size: 2.5em;
 }
 
-#cartDiv #cartItem {
+#cartMainContainer #cart {
   padding: 10px;
   text-align: center;
 }
 
-#cartDiv #cartItem #item {
+#cartMainContainer #cart #item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -285,24 +298,24 @@ nav ul li a {
 }
 
 @media (min-width: 1024px) {
-  #cartDiv #cartItem #item {
+  #cartMainContainer #cart #item {
     width: 400px;
   }
 }
 
-#cartDiv #cartItem #name {
+#cartMainContainer #cart #name {
   color: #F0FFFF;
   font-size: 1.5em;
   margin-right: 5px;
 }
 
-#cartDiv #cartItem #color {
+#cartMainContainer #cart #color {
   color: #F0FFFF;
   font-size: 1.2em;
   margin: 0 15px 0 5px;
 }
 
-#cartDiv #cartItem #price {
+#cartMainContainer #cart #price {
   width: 70px;
   margin-left: auto;
   background: -webkit-gradient(linear, left top, right top, from(#8f5bfe), to(#e68b08));
@@ -312,7 +325,7 @@ nav ul li a {
   padding: 5px;
 }
 
-#cartDiv #totalPrice {
+#cartMainContainer #totalPrice {
   background: -webkit-gradient(linear, right top, left top, from(#8f5bfe), to(#e68b08));
   background: linear-gradient(to left, #8f5bfe 0%, #e68b08 100%);
   border: 4px solid #FBBBB9;
@@ -321,7 +334,7 @@ nav ul li a {
 }
 
 @media (min-width: 1024px) {
-  #cartDiv #totalPrice {
+  #cartMainContainer #totalPrice {
     padding: 50px;
   }
 }

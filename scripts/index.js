@@ -1,6 +1,7 @@
 const content = document.getElementById('content')
 
-function productList(teddies) {
+// display all teddies with name & price + button -> to product sheet
+function displayTeddiesList(teddies) {
   for (teddy of teddies) {
 
     const listDiv = document.createElement('div')
@@ -13,21 +14,20 @@ function productList(teddies) {
     teddyPrice.setAttribute('id', 'price')
 
     const teddyBtn = document.createElement('button')
-    teddyBtn.setAttribute('onclick', `window.location.href="produit.html?_id=${teddy._id}"`)
+    teddyBtn.setAttribute('onclick', `window.location.href="product.html?_id=${teddy._id}"`)
 
     teddyName.textContent = `${teddy.name}`
     teddyPrice.textContent = `${teddy.price / 100} €`
     teddyBtn.innerHTML += `Voir le produit`
 
-    content.append(listDiv)
-    listDiv.append(teddyName, teddyPrice, teddyBtn)
+    content.append(listDiv, teddyBtn)
+    listDiv.append(teddyName, teddyPrice)
   }
 }
-
+// retrieve info from api to display above
 async function retrieveteddies() {
   await fetch('http://localhost:3000/api/teddies')
     .then((response) => response.json())
-    .then((teddies) => productList(teddies))
+    .then((teddies) => displayTeddiesList(teddies))
 }
-
 retrieveteddies()

@@ -1,4 +1,4 @@
-#cartDiv {
+#cartMainContainer {
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -9,7 +9,7 @@
     color: $white;
     font-size: 2.5em;
   }
-  #cartItem {
+  #cart {
     padding: 10px;
     text-align: center;
 

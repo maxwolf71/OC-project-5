@@ -26,10 +26,14 @@
         </li>
       </ul>
     </nav>
-
-    <div id="cartDiv">
-      <div id="cartItem"></div>
+    <!-- Overall cart -->
+    <div id="cartMainContainer">
+      <!-- all items in cart -->
+      <div id="cart">
+        <!-- individual items displayed here (as item)-->
+      </div>
     </div>
+    <!-- empty cart -->
     <div id="emptyCartContainer">
       <button id="resetButton" onclick="resetEmptyCart()">Vider Panier</button>
     </div>
@@ -71,6 +75,6 @@
         <p><a href="mailto:support@company.com">support@company.com</a></p>
       </div>
     </footer>
-    <script src="scripts/panier.js"></script>
+    <script src="scripts/cart.js"></script>
   </body>
 </html>
