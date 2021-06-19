@@ -25,9 +25,9 @@ function displayTeddiesList(teddies) {
   }
 }
 // retrieve info from api to display above
-async function retrieveteddies() {
+async function retrieveTeddies() {
   await fetch('http://localhost:3000/api/teddies')
     .then((response) => response.json())
     .then((teddies) => displayTeddiesList(teddies))
 }
-retrieveteddies()
+retrieveTeddies()

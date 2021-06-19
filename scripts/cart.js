@@ -2,12 +2,11 @@ const cartMainContainer = document.getElementById('cartMainContainer')
 
 function resetEmptyCart() {
     localStorage.clear()
-    localStorage.setItem('localCart', JSON.stringify([]))
     document.location.reload()
 }
 
 function totalCart() {
-    const prices = JSON.parse(localStorage.getItem('localCart'))
+    const prices = JSON.parse(localStorage.getItem('cartContent'))
 
     let total = 0
     for (price of prices) {
@@ -18,15 +17,15 @@ function totalCart() {
 }
 
 function cartDisplay() {
-    const cart = localStorage.getItem('localCart')
+    const cartContent= localStorage.getItem('cartContent')
 
-    if (cart === '[]') {
+    if (cartContent=== '[]' || cartContent=== null) {
         document.getElementById('cartMainContainer').innerHTML = '<h1 id="empty">Panier vide</h1>'
         document.getElementById('orderForm').innerHTML = ''
         emptyCartContainer.classList.add('hidden')
     }
     else {
-        let cartItems = JSON.parse(localStorage.getItem('localCart'))
+        let cartItems = JSON.parse(localStorage.getItem('cartContent'))
 
         for (cartItem of cartItems) {
             document.getElementById('cart').innerHTML += `
@@ -128,31 +127,32 @@ function isValid(elem) {
     return regex.test(elem.value)
 }
 
-let products = []
-let items = JSON.parse(localStorage.getItem('localCart'))
-for(item of items) {
-    products.push(item.id)
-}
-console.log(products)
+// Post request   ***************************************************
 
 async function postRequest() {
 
     let myHeaders = new Headers()
     myHeaders.append("Content-Type", "application/json")
 
+    let products = []
+    let items = JSON.parse(localStorage.getItem('cartContent'))
+
+    for (item of items) {
+        products.push(item.id)
+    }
+
     let raw = JSON.stringify({
-        "contact": {
+        contact: {
             firstName: `${firstName}`,
             lastName: `${lastName}`,
             email: `${email}`,
             address: `${address}`,
             city: `${city}`
         },
-        "products": [
-            item.id
-        ]
+        products:
+            products
     })
-    
+
     let requestOptions = {
         method: 'POST',
         headers: myHeaders,
@@ -162,9 +162,11 @@ async function postRequest() {
 
     await fetch("http://localhost:3000/api/teddies/order", requestOptions)
         .then(response => response.text())
-        .then(result => console.log(JSON.parse(result)))
+        .then(result =>
+            localStorage.setItem('orderId', `${JSON.parse(result).orderId}`),
+            localStorage.setItem('firstName', firstNameInput.value),
+            localStorage.setItem('lastName', lastNameInput.value),
+        )
         .catch(error => console.log('error', error))
-    //location.href = 'confirm.html'
+    location.href = 'confirm.html'
 }
-postRequest()
-

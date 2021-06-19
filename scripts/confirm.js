@@ -1,8 +1,8 @@
 function displayOrderInfo() {
     // retrieve total from localStorage
     const total = localStorage.getItem('total')
-    const lastName = localStorage.getItem('lastName')
     const firstName = localStorage.getItem('firstName')
+    const lastName = localStorage.getItem('lastName')
     const orderId = localStorage.getItem('orderId')
 
     if (orderId != null) {
@@ -19,7 +19,8 @@ function displayOrderInfo() {
     } else {
         document.getElementById('recapDisplay').innerHTML = "Merci d'avoir choisi nos produits"
     }
+    localStorage.clear()
 }
 displayOrderInfo()
-localStorage.clear()
-localStorage.setItem('localCart', JSON.stringify([]))
+
+

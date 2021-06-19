@@ -54,13 +54,14 @@ async function retrieveTeddy(teddyId) {
           price: `${teddyInfo.price}`,
           color: `${document.getElementById('selectColor').value}`
         }
-        // define cart as localCart in localStorage
-        let cart = localStorage.getItem('localCart')
+        localStorage.setItem('cartContent', JSON.stringify([]))
+        // get cartContent in localStorage
+        let cartContent = localStorage.getItem('cartContent')
         // make it more readable
-        cart = JSON.parse(cart)
+        cartContent = JSON.parse(cartContent)
         //add another item
-        cart.push(teddy)
-        localStorage.setItem('localCart', JSON.stringify(cart))
+        cartContent.push(teddy)
+        localStorage.setItem('cartContent', JSON.stringify(cartContent))
       }
 
       function popup() {
