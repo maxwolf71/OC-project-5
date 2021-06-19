@@ -1,8 +1,8 @@
 function displayOrderInfo() {
     // retrieve total from localStorage
     const total = localStorage.getItem('total')
-    const lastName = localStorage.getItem('lastName')
     const firstName = localStorage.getItem('firstName')
+    const lastName = localStorage.getItem('lastName')
     const orderId = localStorage.getItem('orderId')
 
     if (orderId != null) {
@@ -22,4 +22,4 @@ function displayOrderInfo() {
 }
 displayOrderInfo()
 localStorage.clear()
-localStorage.setItem('localCart', JSON.stringify([]))
+localStorage.setItem('cartContent', JSON.stringify([]))
