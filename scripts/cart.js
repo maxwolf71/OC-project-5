@@ -17,7 +17,7 @@ function totalCart() {
 }
 
 function cartDisplay() {
-    const cartContent= localStorage.getItem('cartContent')
+    const cartContent = localStorage.getItem('cartContent')
 
     if (cartContent=== '[]' || cartContent=== null) {
         document.getElementById('cartMainContainer').innerHTML = '<h1 id="empty">Panier vide</h1>'
