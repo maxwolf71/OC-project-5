@@ -3,6 +3,7 @@ const cartMainContainer = document.getElementById('cartMainContainer')
 function resetEmptyCart() {
     localStorage.clear()
     document.location.reload()
+    localStorage.setItem('cartContent', '[]')
 }
 
 function totalCart() {

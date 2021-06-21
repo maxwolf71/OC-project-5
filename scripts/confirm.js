@@ -20,6 +20,7 @@ function displayOrderInfo() {
         document.getElementById('recapDisplay').innerHTML = "Merci d'avoir choisi nos produits"
     }
     localStorage.clear()
+    localStorage.setItem('cartContent', '[]')
 }
 displayOrderInfo()
 

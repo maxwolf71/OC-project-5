@@ -54,7 +54,6 @@ async function retrieveTeddy(teddyId) {
           price: `${teddyInfo.price}`,
           color: `${document.getElementById('selectColor').value}`
         }
-        localStorage.setItem('cartContent', JSON.stringify([]))
         // get cartContent in localStorage
         let cartContent = localStorage.getItem('cartContent')
         // make it more readable
