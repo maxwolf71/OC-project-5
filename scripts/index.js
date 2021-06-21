@@ -1,3 +1,4 @@
+// retrieve html element for displaying
 const content = document.getElementById('content')
 
 // display all teddies with name & price + button -> to product sheet
@@ -12,7 +13,7 @@ function displayTeddiesList(teddies) {
 
     const teddyPrice = document.createElement('h3')
     teddyPrice.setAttribute('id', 'price')
-
+    // sends selected product id to url (for get by product.html) 
     const teddyBtn = document.createElement('button')
     teddyBtn.setAttribute('onclick', `window.location.href="product.html?_id=${teddy._id}"`)
     // add text content to html elements 

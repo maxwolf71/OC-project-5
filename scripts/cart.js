@@ -1,33 +1,43 @@
+// retrieve html element for displaying
 const cartMainContainer = document.getElementById('cartMainContainer')
 
+// clear localStorage + reset cartContent (refresh page)
 function resetEmptyCart() {
     localStorage.clear()
     document.location.reload()
     localStorage.setItem('cartContent', '[]')
 }
-
+// sum of all products in cart
 function totalCart() {
+    // retrieve html element for loop
     const prices = JSON.parse(localStorage.getItem('cartContent'))
 
     let total = 0
     for (price of prices) {
         total += price.price / 100
     }
+    // display result in html *
     cartMainContainer.innerHTML += `<h2 id="totalPrice">Total : ${total} €</h2>`
+    // add to localStorage for later use (confirm.js)
     localStorage.setItem('total', JSON.stringify(total))
 }
 
 function cartDisplay() {
+    // create cartContent in localStorage
     const cartContent = localStorage.getItem('cartContent')
-
-    if (cartContent=== '[]' || cartContent=== null) {
+    // if cartContent array is empty or doesn't exist
+    if (cartContent === '[]' || cartContent === null) {
+        // display "Panier vide"
         document.getElementById('cartMainContainer').innerHTML = '<h1 id="empty">Panier vide</h1>'
+        // display nothing
         document.getElementById('orderForm').innerHTML = ''
+        // hide this
         emptyCartContainer.classList.add('hidden')
     }
     else {
+        // create cartItems in localStorage
         let cartItems = JSON.parse(localStorage.getItem('cartContent'))
-
+        // display html for each item
         for (cartItem of cartItems) {
             document.getElementById('cart').innerHTML += `
             <div id="item">
@@ -44,7 +54,7 @@ cartDisplay()
 
 // Contact form ***********************************************************
 
-// grab elements
+// retrieve html elements
 const orderForm = document.getElementById('orderForm')
 
 const firstNameInput = document.getElementById('firstName')
@@ -53,6 +63,7 @@ const addressInput = document.getElementById('address')
 const cityInput = document.getElementById('city')
 const emailInput = document.getElementById('email')
 
+// create inputs array
 const inputs = [
     firstNameInput,
     lastNameInput,
@@ -60,11 +71,14 @@ const inputs = [
     cityInput,
     emailInput
 ]
-
+// create event on submit of the form
 orderForm.addEventListener('submit', (event) => {
+    // prevent form from submitting
     event.preventDefault()
+    // verify form data is ok
     validate()
     if (isFormValid) {
+        // if form is ok do the post request to send data to server + confirm final order
         postRequest()
     }
 })
@@ -100,29 +114,29 @@ function validate() {
         invalidate(emailInput)
     }
 }
-// reset Inputs
+// reset Inputs when correct value entered
 function resetInputs(elem) {
     elem.classList.remove('invalid')
     elem.nextElementSibling.classList.add('hidden')
 }
-// if input not valid
+// if input is not valid
 function invalidate(elem) {
     elem.classList.add('invalid')
     elem.nextElementSibling.classList.remove('hidden')
 }
-// clear error message on input
+// if inputs valid execute validate()
 inputs.forEach(input => {
     input.addEventListener('input', () => {
         validate()
     })
 })
 
-// validate email
+// validate email under certain conditions
 function isEmail() {
     let regexEmail = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/
     return regexEmail.test(emailInput.value)
 }
-//validate remaining
+//validate all other fields under certain conditions
 function isValid(elem) {
     let regex = /^[a-zA-Z_.+-]+$/
     return regex.test(elem.value)
@@ -131,7 +145,6 @@ function isValid(elem) {
 // Post request   ***************************************************
 
 async function postRequest() {
-
     let myHeaders = new Headers()
     myHeaders.append("Content-Type", "application/json")
 
