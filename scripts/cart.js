@@ -2,6 +2,10 @@ const cartMainContainer = document.getElementById('cartMainContainer')
 
 function resetEmptyCart() {
     localStorage.clear()
+<<<<<<< HEAD
+=======
+    localStorage.setItem('cartContent', JSON.stringify([]))
+>>>>>>> d32b8a068ec2921ac65e58d5f342492f80465eb3
     document.location.reload()
 }
 
@@ -17,7 +21,11 @@ function totalCart() {
 }
 
 function cartDisplay() {
+<<<<<<< HEAD
     const cartContent= localStorage.getItem('cartContent')
+=======
+    const cart = localStorage.getItem('cartContent')
+>>>>>>> d32b8a068ec2921ac65e58d5f342492f80465eb3
 
     if (cartContent=== '[]' || cartContent=== null) {
         document.getElementById('cartMainContainer').innerHTML = '<h1 id="empty">Panier vide</h1>'

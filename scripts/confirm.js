@@ -22,5 +22,10 @@ function displayOrderInfo() {
     localStorage.clear()
 }
 displayOrderInfo()
+<<<<<<< HEAD
 
 
+=======
+localStorage.clear()
+localStorage.setItem('cartContent', JSON.stringify([]))
+>>>>>>> d32b8a068ec2921ac65e58d5f342492f80465eb3
