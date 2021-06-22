@@ -66,6 +66,7 @@ async function retrieveTeddy(teddyId) {
         if (localStorage.length === 0) {
           localStorage.setItem('cartContent', '[]')
         }
+
         // get cartContent in localStorage
         let cartContent = localStorage.getItem('cartContent')
         // make it more readable
