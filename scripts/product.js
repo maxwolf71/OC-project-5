@@ -50,9 +50,6 @@ async function retrieveTeddy(teddyId) {
       }
       getColors()
 
-      // Click "Ajouter au panier" button   ************ 
-      document.getElementById("btnAddToCart").onclick = function () { popup() }
-
       // adding products to cart
       function addTeddyCart() {
         // object for teddy
@@ -75,6 +72,9 @@ async function retrieveTeddy(teddyId) {
         cartContent.push(teddy)
         localStorage.setItem('cartContent', JSON.stringify(cartContent))
       }
+
+      // Click Cart button   ************ 
+      document.getElementById("btnAddToCart").onclick = function () { popup() }
 
       function popup() {
         // if user clicks on "OK"

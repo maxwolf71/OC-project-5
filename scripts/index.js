@@ -32,6 +32,7 @@ async function retrieveTeddies() {
     .then((teddies) =>
       displayTeddiesList(teddies)
     )
+    // in case of an error
     .catch(error => console.log('error', error))
 }
 retrieveTeddies()
