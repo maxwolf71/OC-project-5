@@ -82,10 +82,12 @@ orderForm.addEventListener('submit', (event) => {
         postRequest()
     }
 })
-
+// set isFormValid as not true
 let isFormValid = false
+//validate all other fields under certain conditions
 
 function validate() {
+    // set isFormValid as true
     isFormValid = true
     resetInputs(firstNameInput)
     resetInputs(lastNameInput)
@@ -136,26 +138,21 @@ function isEmail() {
     let regexEmail = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/
     return regexEmail.test(emailInput.value)
 }
-//validate all other fields under certain conditions
-function isValid(elem) {
-    let regex = /^[a-zA-Z_.+-]+$/
-    return regex.test(elem.value)
-}
 
 // Post request   ***************************************************
-
 async function postRequest() {
     let myHeaders = new Headers()
     myHeaders.append("Content-Type", "application/json")
 
     let products = []
     let items = JSON.parse(localStorage.getItem('cartContent'))
-
+    // loop for products object (to get all ids in cart)
     for (item of items) {
         products.push(item.id)
     }
-
+    // objects to use in the post request body
     let raw = JSON.stringify({
+        // contact object
         contact: {
             firstName: `${firstName}`,
             lastName: `${lastName}`,
@@ -163,6 +160,7 @@ async function postRequest() {
             address: `${address}`,
             city: `${city}`
         },
+        // products object
         products:
             products
     })
@@ -177,10 +175,13 @@ async function postRequest() {
     await fetch("http://localhost:3000/api/teddies/order", requestOptions)
         .then(response => response.text())
         .then(result =>
+            // add items to localStorage for later use (confirm.js)
             localStorage.setItem('orderId', `${JSON.parse(result).orderId}`),
             localStorage.setItem('firstName', firstNameInput.value),
             localStorage.setItem('lastName', lastNameInput.value),
         )
+        // in case of an error
         .catch(error => console.log('error', error))
+    // go to confirm.js  
     location.href = 'confirm.html'
 }

@@ -1,12 +1,14 @@
 function displayOrderInfo() {
     // retrieve total from localStorage
     const total = localStorage.getItem('total')
+    // retrieve form elements from localStorage
     const firstName = localStorage.getItem('firstName')
     const lastName = localStorage.getItem('lastName')
     const orderId = localStorage.getItem('orderId')
 
+    // if orderId is true
     if (orderId != null) {
-
+        // display this :
         document.getElementById('recapDisplay').innerHTML = `
             
                 <h2>Récapitulatif de votre commande</h2>
@@ -17,8 +19,10 @@ function displayOrderInfo() {
                 </div>
         `
     } else {
+        // otherwise display this
         document.getElementById('recapDisplay').innerHTML = "Merci d'avoir choisi nos produits"
     }
+    // clear localStorage, then add cartContent to localStorage
     localStorage.clear()
     localStorage.setItem('cartContent', '[]')
 }

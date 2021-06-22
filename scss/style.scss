@@ -1,20 +1,18 @@
 // 1-HELPERS *************
-@import '1-helpers/keyframes';
-@import '1-helpers/variables';
+@import "1-helpers/keyframes";
+@import "1-helpers/variables";
 
 // 2-BASICS *************
-@import '2-basics/base';
-@import '2-basics/buttons';
+@import "2-basics/base";
+@import "2-basics/buttons";
 
 // 3-LAYOUT *************
-@import '3-layout/footer';
-@import '3-layout/navbar';
-@import '3-layout/media-queries';
+@import "3-layout/footer";
+@import "3-layout/navbar";
+@import "3-layout/media-queries";
 
 // 4-PAGES *************
-@import '4-pages/index';
-@import '4-pages/produit';
-@import '4-pages/panier';
-@import '4-pages/confirm';
-
-  
+@import "4-pages/index";
+@import "4-pages/product";
+@import "4-pages/cart";
+@import "4-pages/confirm";
